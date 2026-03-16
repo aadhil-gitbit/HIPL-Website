@@ -16,6 +16,7 @@ const PRODUCTS = [
     
     // Tooltip & Product Page Content
     shortDesc: 'Elastomeric waterproofing coating with 350% elongation',
+    realTalk: 'If your roof bakes all day and leaks in monsoon, this is the one that handles both without cracking every season.',
     application: 'Suitable for roofs, terraces, and exterior walls',
     coverage: '1.5-2 kg/m²',
     
@@ -40,6 +41,7 @@ const PRODUCTS = [
     featured: true,
     
     shortDesc: 'Self-leveling epoxy flooring system for industrial applications',
+    realTalk: 'Built for places where forklifts, spills, and heavy traffic destroy normal floors in months.',
     application: 'Warehouses, manufacturing facilities, clean rooms',
     coverage: '1.2-1.5 kg/m² per mm thickness',
     
@@ -62,6 +64,7 @@ const PRODUCTS = [
     featured: true,
     
     shortDesc: 'Moisture tolerant epoxy primer for damp substrates',
+    realTalk: 'When the slab still has moisture and deadlines are tight, this helps avoid adhesion failure and rework.',
     application: 'New concrete, repair work, high-humidity areas',
     coverage: '0.15-0.20 kg/m²',
     
@@ -84,6 +87,7 @@ const PRODUCTS = [
     featured: true,
     
     shortDesc: 'Water-based decorative concrete sealer and coating',
+    realTalk: 'Use it when you want decorative concrete to stay good-looking instead of fading and staining after one rainy season.',
     application: 'Driveways, pathways, decorative concrete surfaces',
     coverage: '0.10-0.15 kg/m² per coat',
     
@@ -110,6 +114,7 @@ const PRODUCTS = [
     featured: false,              // true = shows on homepage
     
     shortDesc: 'One-line technical description',
+    realTalk: 'Optional second-tier plain-language description shown in tooltip. Keep this honest and practical.',
     application: 'Where/how it is used',
     coverage: 'X kg/m² or X m²/kg',
     

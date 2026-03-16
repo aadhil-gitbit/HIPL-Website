@@ -1,81 +1,226 @@
 // ═══════════════════════════════════════════════════════════════════
 // SOLUTIONS DATABASE
+// Built from current product taxonomy (Waterproofing, Flooring Systems,
+// Epoxy Systems, Concrete Admixtures, Repair Systems, Surface Protection,
+// Decorative Concrete, Sports Flooring)
 // ═══════════════════════════════════════════════════════════════════
 
 const SOLUTIONS = [
   {
-    id: 'roofing',
-    title: 'Roofing & Terraces',
+    id: 'roof-terrace-waterproofing',
+    title: 'Roof & Terrace Waterproofing',
     icon: '🏠',
-    tagline: 'Complete waterproofing systems for every roof type',
-    description: 'From flat concrete roofs to metal sheet roofing, our waterproofing systems provide long-lasting protection against water ingress, heat, and UV degradation. Elastomeric coatings with up to 350% elongation handle thermal movement without cracking.',
+    tagline: 'Stop leaks, reduce heat gain, and protect exposed slabs',
+    description: 'Complete roof systems covering primers, elastomeric coatings, PU membranes, sealants, and crack treatment for concrete and metal roofs.',
     challenges: [
-      'Water pooling on flat roofs',
-      'Thermal cracking from extreme temperature cycles',
-      'UV degradation of conventional coatings',
-      'Leakage at joints and penetrations'
+      'Recurring monsoon leakage and seepage into top floors',
+      'Thermal cracking due to daily expansion and contraction',
+      'UV degradation and premature coating failure',
+      'Joint/penetration failures around pipes and parapets'
     ],
-    recommendedProducts: ['hardproof-coolcoat'],
+    recommendedProducts: [
+      'hp100-primer-wb',
+      'hp110-primer-sb',
+      'hp120-primer-pu',
+      'hardproof-coolcoat',
+      'hp400-acr300',
+      'hp500-pu200',
+      'hp520-pu400',
+      'hp510-pu350'
+    ],
     image: ''
   },
   {
-    id: 'industrial-floors',
-    title: 'Industrial Floors',
-    icon: '🏭',
-    tagline: 'Heavy-duty flooring for demanding environments',
-    description: 'Epoxy and polyurethane flooring systems engineered for warehouses, manufacturing plants, food processing units, and pharmaceutical facilities. Chemical resistant, easy to clean, and built to withstand heavy traffic and impact.',
+    id: 'wet-areas-bathrooms-balconies',
+    title: 'Bathrooms, Balconies & Wet Areas',
+    icon: '🚿',
+    tagline: 'Flexible waterproofing for internal wet zones',
+    description: 'Targeted waterproofing for toilets, bathrooms, kitchens, balconies, and utility areas where concealed seepage causes paint and plaster damage.',
     challenges: [
-      'Heavy forklift and vehicle traffic',
-      'Chemical spills and aggressive substances',
-      'Hygiene and cleanroom requirements',
-      'Concrete dusting and surface degradation'
+      'Leakage to adjacent rooms and lower floors',
+      'Tile/grout lines allowing moisture ingress',
+      'Movement cracks in screed and plaster',
+      'Chronic damp patches and mold growth'
     ],
-    recommendedProducts: ['hardfloor-sl1000', 'hardfloor-mtp100'],
+    recommendedProducts: [
+      'hp310-cm200',
+      'hp100-primer-wb',
+      'hp510-pu350',
+      'hs410-tile',
+      'hc710-bond'
+    ],
     image: ''
   },
   {
-    id: 'basements',
-    title: 'Basement Waterproofing',
+    id: 'basement-underground',
+    title: 'Basement & Underground Waterproofing',
     icon: '🏗️',
-    tagline: 'Keep water out from below grade structures',
-    description: 'Comprehensive waterproofing solutions for basements, retaining walls, and underground structures. Positive and negative side waterproofing systems that handle hydrostatic pressure and rising damp.',
+    tagline: 'Systems for hydrostatic pressure and negative-side seepage',
+    description: 'For basements, retaining walls, foundations, and underground parking where groundwater pressure, active leaks, and rising damp are common.',
     challenges: [
-      'Hydrostatic water pressure',
-      'Rising damp through concrete',
-      'Construction joint leakage',
-      'Difficult access for repairs after construction'
+      'Hydrostatic pressure through walls/slabs',
+      'Active leaks from construction joints and cracks',
+      'Persistent dampness and odor in enclosed areas',
+      'Difficult post-construction access for repairs'
     ],
-    recommendedProducts: ['hardproof-coolcoat'],
+    recommendedProducts: [
+      'hp320-cm300',
+      'hp600-dp100',
+      'hp700-inj-pu',
+      'hp710-inj-ep',
+      'ff400-wp100',
+      'hardpoxy-dampblock'
+    ],
     image: ''
   },
   {
-    id: 'facades',
-    title: 'Facade Protection',
-    icon: '🏢',
-    tagline: 'Protect and beautify exterior walls',
-    description: 'Weather-resistant coatings and sealers that protect building facades from rain penetration, pollution, and biological growth while maintaining breathability and aesthetic appearance.',
+    id: 'industrial-flooring',
+    title: 'Industrial & Commercial Flooring',
+    icon: '🏭',
+    tagline: 'From dust-proof concrete to heavy-duty seamless systems',
+    description: 'Flooring solutions spanning primers, epoxy/PU coatings, self-leveling systems, hardeners, and specialty anti-static or chemical-resistant floors.',
     challenges: [
-      'Driving rain penetration',
-      'Algae and fungal growth',
-      'Pollution staining',
-      'Thermal and structural cracking'
+      'Forklift traffic, abrasion, and impact loading',
+      'Chemical spills and aggressive cleaning cycles',
+      'Dusting concrete and poor housekeeping standards',
+      'Need for hygienic, seamless, easy-clean floors'
     ],
-    recommendedProducts: ['paveguard-wb'],
+    recommendedProducts: [
+      'hardfloor-mtp100',
+      'hf100-ep100',
+      'hardfloor-sl1000',
+      'hf300-sl1003',
+      'hf330-erc300',
+      'hf410-pu600',
+      'hf510-pu-sl',
+      'hf500-esd',
+      'nmx20',
+      'hf600-qh',
+      'hf610-mh'
+    ],
     image: ''
   },
   {
-    id: 'concrete-repair',
-    title: 'Concrete Repair',
+    id: 'concrete-repair-rehab',
+    title: 'Concrete Repair & Rehabilitation',
     icon: '🔧',
-    tagline: 'Restore structural integrity to damaged concrete',
-    description: 'Repair mortars, bonding agents, and protective coatings for rehabilitating deteriorated concrete structures. From micro-crack injection to full structural repair, our systems restore and protect.',
+    tagline: 'Repair mortars, grouts, crack injection, and corrosion control',
+    description: 'End-to-end repair chemistry for spalling, delamination, cracks, exposed rebar, machine foundations, and structural strengthening interventions.',
     challenges: [
-      'Reinforcement corrosion and spalling',
-      'Structural cracking and delamination',
-      'Carbonation and chloride attack',
-      'Aging infrastructure maintenance'
+      'Spalling concrete and exposed corroded rebar',
+      'Structural/non-structural cracks and delamination',
+      'Failed repairs due to poor bonding and shrinkage',
+      'Need for rapid return-to-service in operational sites'
     ],
-    recommendedProducts: [],
+    recommendedProducts: [
+      'ff100-rm40',
+      'ff110-rmf40',
+      'ff210-microcon',
+      'ff200-gp2',
+      'ff220-anchorflow',
+      'ff310-cp200',
+      'ff300-rr100',
+      'ff700-epoxy-injection',
+      'he300-inj200',
+      'he600-anchor',
+      'ff500-ca500',
+      'ff510-ca700'
+    ],
+    image: ''
+  },
+  {
+    id: 'facade-surface-protection',
+    title: 'Facade & Surface Protection',
+    icon: '🏢',
+    tagline: 'Seal, protect, and preserve exposed concrete, masonry, and stone',
+    description: 'External wall and surface protection systems including anti-carbonation, silane/siloxane repellents, PU protection, and breathable sealers.',
+    challenges: [
+      'Driving rain penetration and damp facades',
+      'Carbonation-led corrosion in RCC members',
+      'Staining, efflorescence, and pollution deposits',
+      'UV/weather exposure reducing coating life'
+    ],
+    recommendedProducts: [
+      'hs300-ac200',
+      'hs500-silane',
+      'hs510-siloxane',
+      'hs100-wb100',
+      'hs110-sb200',
+      'hs200-pu300',
+      'hs400-stone',
+      'hs420-concrete'
+    ],
+    image: ''
+  },
+  {
+    id: 'decorative-pavers-hardscape',
+    title: 'Decorative Concrete, Pavers & Hardscape',
+    icon: '🧱',
+    tagline: 'Protection and enhancement for aesthetic concrete surfaces',
+    description: 'Sealers, color enhancers, release agents, dyes, and hardeners for stamped concrete, pavers, pathways, courtyards, and decorative floors.',
+    challenges: [
+      'Color fading and weathering of decorative finishes',
+      'Oil/dirt staining on pavers and pathways',
+      'Moss and moisture retention in outdoor surfaces',
+      'Need for wet-look or enriched finish aesthetics'
+    ],
+    recommendedProducts: [
+      'paveguard-wb',
+      'pg110-sb',
+      'paveguard-color',
+      'pg300-stamp',
+      'pg400-hardener',
+      'pg410-release',
+      'pg420-dye'
+    ],
+    image: ''
+  },
+  {
+    id: 'concrete-production-admixtures',
+    title: 'Concrete Production & Admixture Design',
+    icon: '🧪',
+    tagline: 'Workability, strength, durability, and waterproofing from batching stage',
+    description: 'Admixture-driven solutions for RMC plants, precast yards, and site concreting to optimize slump, strength, set time, and long-term durability.',
+    challenges: [
+      'Workability loss during transport and placement delays',
+      'Strength targets without excess water/cement penalties',
+      'Hot/cold weather setting control requirements',
+      'Durability demands: waterproofing, freeze-thaw, curing quality'
+    ],
+    recommendedProducts: [
+      'hc100-sp100',
+      'hc110-sp200',
+      'hc120-sp300',
+      'hc200-r100',
+      'hc210-a100',
+      'hc300-wp100',
+      'hc400-air100',
+      'hc500-sc100',
+      'hc700-curing',
+      'hc720-release'
+    ],
+    image: ''
+  },
+  {
+    id: 'sports-flooring',
+    title: 'Sports Flooring & Running Tracks',
+    icon: '🏃',
+    tagline: 'Layered acrylic/PU systems for performance and durability',
+    description: 'System-based sports surfacing for courts and tracks with primer, base, cushion, topcoat, and line-marking layers.',
+    challenges: [
+      'Inconsistent traction and ball rebound',
+      'High wear from repetitive athletic use',
+      'UV/weather exposure in outdoor courts',
+      'Need for player comfort and shock attenuation'
+    ],
+    recommendedProducts: [
+      'sf100-primer',
+      'sf200-basecoat',
+      'sf300-cushion',
+      'sf400-topcoat',
+      'sf500-line',
+      'sf600-track'
+    ],
     image: ''
   }
 ];
