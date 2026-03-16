@@ -4,6 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product | Hardex India</title>
+  <meta name="description" content="View detailed specifications, applications, and documentation for Hardex India products.">
+  <meta name="author" content="Hardex India Private Limited">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#00BCD4">
+  <link rel="canonical" href="https://www.hardexindia.com/product-detail.html">
+  <meta property="og:title" content="Product | Hardex India">
+  <meta property="og:description" content="View detailed specifications, applications, and documentation for Hardex India products.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hardexindia.com/product-detail.html">
+  <meta property="og:site_name" content="Hardex India">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="https://www.hardexindia.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product | Hardex India">
+  <meta name="twitter:description" content="View detailed specifications, applications, and documentation for Hardex India products.">
+  <meta name="twitter:image" content="https://www.hardexindia.com/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Hardex India Private Limited",
+  "url": "https://www.hardexindia.com/",
+  "logo": "https://www.hardexindia.com/favicon.svg",
+  "description": "Manufacturer of construction chemicals and industrial coatings for Indian conditions.",
+  "email": "info@hardexindia.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kochi",
+    "addressRegion": "Kerala",
+    "addressCountry": "IN"
+  }
+}
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/pages.css">
@@ -61,15 +96,37 @@
     return;
   }
 
-  // Update page title and meta
-  document.title = product.seo ? product.seo.title : product.name + ' | Hardex India';
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (!metaDesc) {
-    const meta = document.createElement('meta');
-    meta.name = 'description';
-    meta.content = product.seo ? product.seo.description : product.shortDesc;
-    document.head.appendChild(meta);
+  // Update page title and social metadata
+  const pageTitle = product.seo ? product.seo.title : `${product.name} | Hardex India`;
+  const pageDescription = product.seo ? product.seo.description : product.shortDesc;
+  const productUrl = `${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(product.id)}`;
+
+  document.title = pageTitle;
+
+  function setMeta(selector, attr, value) {
+    let node = document.querySelector(selector);
+    if (!node) {
+      node = document.createElement('meta');
+      node.setAttribute(attr, selector.includes('property=') ? selector.match(/"([^"]+)"/)[1] : selector.match(/"([^"]+)"/)[1]);
+      document.head.appendChild(node);
+    }
+    node.setAttribute('content', value);
   }
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.content = pageDescription;
+  }
+
+  setMeta('meta[property="og:title"]', 'property', pageTitle);
+  setMeta('meta[property="og:description"]', 'property', pageDescription);
+  setMeta('meta[property="og:type"]', 'property', 'product');
+  setMeta('meta[property="og:url"]', 'property', productUrl);
+  setMeta('meta[name="twitter:title"]', 'name', pageTitle);
+  setMeta('meta[name="twitter:description"]', 'name', pageDescription);
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.href = productUrl;
 
   // Breadcrumb
   document.getElementById('bc-cat').innerHTML = `<a href="products.html?cat=${encodeURIComponent(product.category.toLowerCase().replace(/\s+/g, '-'))}">${product.category}</a>`;
@@ -135,12 +192,21 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "description": product.shortDesc,
+    "description": pageDescription,
     "brand": { "@type": "Brand", "name": "Hardex India" },
-    "manufacturer": { "@type": "Organization", "name": "Hardex India Private Limited" },
-    "category": product.category
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hardex India Private Limited",
+      "url": "https://www.hardexindia.com/"
+    },
+    "category": product.category,
+    "sku": product.id,
+    "url": productUrl
   };
+  const existingJsonLd = document.getElementById('product-jsonld');
+  if (existingJsonLd) existingJsonLd.remove();
   const script = document.createElement('script');
+  script.id = 'product-jsonld';
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify(jsonLd);
   document.head.appendChild(script);
