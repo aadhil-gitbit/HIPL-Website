@@ -4,9 +4,1512 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hardex India | Construction Chemicals &amp; Industrial Coatings</title>
+  <meta name="description" content="Leading manufacturer of construction chemicals and industrial coatings in India. 150+ formulations including waterproofing, epoxy flooring, and protective coatings.">
+  <meta name="author" content="Hardex India Private Limited">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#00BCD4">
+  <link rel="canonical" href="https://www.hardexindia.com/">
+  <meta property="og:title" content="Hardex India | Construction Chemicals & Industrial Coatings">
+  <meta property="og:description" content="Leading manufacturer of construction chemicals and industrial coatings in India. 150+ formulations including waterproofing, epoxy flooring, and protective coatings.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hardexindia.com/">
+  <meta property="og:site_name" content="Hardex India">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="https://www.hardexindia.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hardex India | Construction Chemicals & Industrial Coatings">
+  <meta name="twitter:description" content="Leading manufacturer of construction chemicals and industrial coatings in India. 150+ formulations including waterproofing, epoxy flooring, and protective coatings.">
+  <meta name="twitter:image" content="https://www.hardexindia.com/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Hardex India Private Limited",
+  "url": "https://www.hardexindia.com/",
+  "logo": "https://www.hardexindia.com/favicon.svg",
+  "description": "Manufacturer of construction chemicals and industrial coatings for Indian conditions.",
+  "email": "info@hardexindia.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kochi",
+    "addressRegion": "Kerala",
+    "addressCountry": "IN"
+  }
+}
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 
+:root {
+  --teal:        #00BCD4;
+  --teal-dark:   #0097A7;
+  --teal-glow:   rgba(0, 188, 212, 0.15);
+  --teal-thin:   rgba(0, 188, 212, 0.08);
+  --black:       #0d0d0d;
+  --ink:         #1A1A1A;
+  --mid:         #3a3a3a;
+  --muted:       #888;
+  --rule:        rgba(255,255,255,0.08);
+  --rule-light:  rgba(0,0,0,0.08);
+  --off:         #f4f4f2;
+  --white:       #ffffff;
+  --font-disp:   'Bebas Neue', sans-serif;
+  --font-body:   'DM Sans', sans-serif;
+  --font-mono:   'DM Mono', monospace;
+  --ease:        cubic-bezier(0.16, 1, 0.3, 1);
+  --r:           6px;
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html { scroll-behavior: auto; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--off);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: var(--font-body); }
+
+/* ═══ SCROLLBAR ═══ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--off); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  justify-content: space-between;
+  background: transparent;
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.nav.scrolled {
+  background: rgba(13, 13, 13, 0.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--rule);
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
+}
+
+.logo-word {
+  font-family: var(--font-disp);
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.logo-word em {
+  font-style: normal;
+  color: var(--teal);
+}
+
+.logo-eye {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  margin-left: 2px;
+  animation: blink 3s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.logo-sub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--white); }
+
+.nav-links a.nav-cta {
+  background: var(--teal);
+  color: var(--black);
+  padding: 9px 22px;
+  border-radius: var(--r);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-links a.nav-cta:hover {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+  color: var(--white);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 60px;
+  align-items: center;
+  padding: 100px 40px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background texture */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 60% 50%, rgba(0,188,212,0.06) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 40px);
+  pointer-events: none;
+}
+
+.hero-l {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.k-bar {
+  width: 32px;
+  height: 2px;
+  background: var(--teal);
+}
+
+.k-txt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.hero-h1 {
+  font-family: var(--font-disp);
+  font-size: clamp(72px, 9vw, 120px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.hero-h1 .t {
+  color: var(--teal);
+  -webkit-text-stroke: 2px var(--teal);
+}
+
+.hero-p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-dark:hover {
+  background: var(--teal-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,188,212,0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 13px 26px;
+  border-radius: var(--r);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: var(--teal-thin);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.h-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.h-stat-n {
+  font-family: var(--font-disp);
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.h-stat-n span {
+  color: var(--teal);
+  font-size: 28px;
+}
+
+.h-stat-l {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ─── Hero Right Panel ─── */
+.hero-r {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-r-eye {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,188,212,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cert-pip {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background: var(--teal);
+  color: var(--black);
+  font-family: var(--font-disp);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.4;
+  padding: 10px 12px;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dark-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 6px;
+}
+
+.feat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════════════════════════════════════ */
+.trust {
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 14px 0;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.trust::before,
+.trust::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trust::before { left: 0; background: linear-gradient(to right, var(--ink), transparent); }
+.trust::after  { right: 0; background: linear-gradient(to left, var(--ink), transparent); }
+
+.trust-inner {
+  display: flex;
+  gap: 0;
+  animation: ticker 28s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.t-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 28px;
+}
+
+.t-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.t-txt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION UTILITY
+═══════════════════════════════════════════════════════════════════ */
+.sec {
+  padding: 100px 40px;
+}
+
+.sec-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sl-bar {
+  width: 24px;
+  height: 2px;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+.sl-txt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.sec-h {
+  font-family: var(--font-disp);
+  font-size: clamp(48px, 5.5vw, 72px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.sec-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 480px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ABOUT SECTION
+═══════════════════════════════════════════════════════════════════ */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.about-dark {
+  background: var(--black);
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-dark::before {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(0,188,212,0.1) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-big-n {
+  font-family: var(--font-disp);
+  font-size: clamp(100px, 12vw, 160px);
+  line-height: 0.85;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.about-big-l {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-top: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-stat-row {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.as-n {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.as-n span {
+  color: var(--teal);
+}
+
+.as-l {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.about-light {
+  background: var(--off);
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-light .sec-h {
+  margin-bottom: 24px;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+
+.about-text:last-of-type { margin-bottom: 32px; }
+
+.about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  background: rgba(0,151,167,0.1);
+  border: 1px solid rgba(0,188,212,0.2);
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SOLUTIONS SECTION
+═══════════════════════════════════════════════════════════════════ */
+.solutions {
+  background: var(--white);
+}
+
+.sol-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 52px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.sol-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sol-card-link {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
+}
+.sol-card {
+  background: var(--off);
+  border: 1px solid var(--rule-light);
+  border-radius: 12px;
+  padding: 32px 28px;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.sol-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.sol-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  border-color: rgba(0,188,212,0.2);
+}
+
+.sol-card:hover::after { transform: scaleX(1); }
+
+.sol-icon-svg {
+  width: 48px;
+  height: 48px;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+
+.sol-icon-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sol-name {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.sol-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONTACT SECTION
+═══════════════════════════════════════════════════════════════════ */
+.contact {
+  background: var(--off);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-left .sec-h { margin-bottom: 20px; }
+
+.contact-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--mid);
+  margin-bottom: 36px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule-light);
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+a.contact-value:hover { color: var(--teal); }
+
+/* ─── Contact Form ─── */
+.contact-form {
+  background: var(--white);
+  border: 1px solid var(--rule-light);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: var(--off);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--r);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--muted); }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px var(--teal-thin);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.btn-submit {
+  width: 100%;
+  background: var(--ink);
+  color: var(--white);
+  border: none;
+  border-radius: var(--r);
+  padding: 15px 28px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-submit:hover {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════════ */
+.footer {
+  background: var(--black);
+  padding: 64px 40px 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+
+.footer-col ul a:hover { color: var(--teal); }
+
+.footer-logo .logo-word { font-size: 32px; }
+.footer-logo .logo-sub { margin-top: 4px; }
+
+.footer-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.3);
+  margin-top: 16px;
+  max-width: 280px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRODUCTS PAGE
+═══════════════════════════════════════════════════════════════════ */
+.products-hero {
+  min-height: 52vh;
+  background: var(--black);
+  display: flex;
+  align-items: flex-end;
+  padding: 100px 40px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.products-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(0,188,212,0.08) 0%, transparent 70%),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.015) 60px);
+  pointer-events: none;
+}
+
+.products-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.products-hero-content .sec-label { margin-bottom: 16px; }
+
+.products-hero-title {
+  font-family: var(--font-disp);
+  font-size: clamp(72px, 10vw, 120px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.products-hero-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  max-width: 560px;
+}
+
+.products-catalog {
+  padding: 60px 40px 100px;
+  background: var(--off);
+}
+
+/* Category group rendered by product-cards.js */
+.cat-group {
+  margin-bottom: 64px;
+}
+
+.cat-group:last-child { margin-bottom: 0; }
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.cat-name {
+  font-family: var(--font-disp);
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.cat-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: rgba(0,0,0,0.06);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ─── Product Card (Both Pages) ─── */
+.prod-card {
+  background: var(--white);
+  border: 1px solid var(--rule-light);
+  border-radius: 10px;
+  padding: 24px;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s;
+  position: relative;
+}
+
+.prod-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-color: rgba(0,188,212,0.3);
+}
+
+.prod-card-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.prod-card-name {
+  font-family: var(--font-disp);
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.prod-card-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.prod-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.prod-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule-light);
+}
+
+.prod-card-cov {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.prod-card-arrow {
+  color: var(--teal);
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.prod-card:hover .prod-card-arrow { transform: translateX(4px); }
+
+/* Featured card on homepage */
+.feat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.feat-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(0,188,212,0.25);
+  transform: translateX(4px);
+}
+
+.feat-card.primary {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.feat-card.primary:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  transform: translateX(4px);
+}
+
+.feat-card-icon {
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feat-card.primary .feat-card-icon { background: rgba(0,0,0,0.15); }
+
+.feat-card-info { flex: 1; }
+
+.feat-card-name {
+  font-family: var(--font-disp);
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.feat-card.primary .feat-card-name { color: var(--black); }
+
+.feat-card-cat {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.feat-card.primary .feat-card-cat { color: rgba(0,0,0,0.5); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════════════════════════════════════ */
+.rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.rv.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.rv:nth-child(1) { transition-delay: 0ms; }
+.rv:nth-child(2) { transition-delay: 80ms; }
+.rv:nth-child(3) { transition-delay: 160ms; }
+.rv:nth-child(4) { transition-delay: 240ms; }
+.rv:nth-child(5) { transition-delay: 320ms; }
+.rv:nth-child(6) { transition-delay: 400ms; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .sol-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .about { grid-template-columns: 1fr; }
+  .about-dark { padding: 60px 40px; }
+  .about-light { padding: 60px 40px; }
+}
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 48px; }
+  .hero-r { display: none; }
+  .contact-wrapper { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: rgba(13,13,13,0.98);
+    backdrop-filter: blur(16px);
+    padding: 24px 24px 40px;
+    gap: 20px;
+    z-index: 899;
+  }
+  .nav-toggle { display: flex; }
+  .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  .sec { padding: 60px 20px; }
+  .sol-grid { grid-template-columns: 1fr; }
+  .footer-content { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .hero-h1 { font-size: 72px; }
+  .about-dark, .about-light { padding: 48px 24px; }
+  .about-stat-row { gap: 20px; }
+  .contact-form { padding: 24px; }
+  .products-hero { padding: 80px 20px 48px; }
+  .products-catalog { padding: 40px 20px 60px; }
+  .cat-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .footer-content { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .hero-actions { flex-direction: column; }
+  .btn-dark, .btn-ghost { width: 100%; justify-content: center; }
+  .sol-header { flex-direction: column; align-items: flex-start; }
+}
+/* ═══════════════════════════════════════════════════════════════════
+   PRODUCT TOOLTIP / MODAL
+   Desktop: hover tooltip · Mobile: bottom sheet
+═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Overlay (mobile) ─── */
+.tooltip-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 800;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.tooltip-overlay.active {
+  display: block;
+}
+
+.tooltip-overlay.visible {
+  opacity: 1;
+}
+
+/* ─── Tooltip container ─── */
+.prod-tooltip {
+  position: absolute;
+  z-index: 802;
+  width: 300px;
+  background: #0d0d0d;
+  border: 1px solid rgba(0,188,212,0.2);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,188,212,0.08);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.prod-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Arrow */
+.prod-tooltip::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #0d0d0d;
+  border-left: 1px solid rgba(0,188,212,0.2);
+  border-top: 1px solid rgba(0,188,212,0.2);
+  transform: rotate(-135deg);
+  bottom: -6px;
+  left: 28px;
+}
+
+.prod-tooltip.flip::before {
+  bottom: auto;
+  top: -6px;
+  transform: rotate(45deg);
+}
+
+/* ─── Mobile Sheet ─── */
+.prod-sheet {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #0d0d0d;
+  border-radius: 20px 20px 0 0;
+  padding: 0 24px 40px;
+  z-index: 801;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.prod-sheet.visible {
+  transform: translateY(0);
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  margin: 14px auto 24px;
+}
+
+/* ─── Shared inner content ─── */
+.tt-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tt-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.tt-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00BCD4;
+  margin-bottom: 16px;
+}
+
+.tt-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 16px 0;
+}
+
+.tt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tt-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+
+.tt-val {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  text-align: right;
+}
+
+.tt-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0;
+}
+
+.tt-rt-wrap {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.tt-rt-toggle {
+  font-size: 12px;
+  color: #00BCD4;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.tt-rt-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.tt-rt-toggle::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 0.2s ease;
+}
+
+.tt-rt-wrap[open] .tt-rt-toggle::before {
+  transform: rotate(90deg);
+}
+
+.tt-rt-body {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.84);
+}
+
+
+.tt-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.tt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  cursor: pointer;
+  border: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.tt-btn-tds {
+  background: #00BCD4;
+  color: #0d0d0d;
+  font-weight: 700;
+}
+
+.tt-btn-tds:hover {
+  background: #0097A7;
+  color: #fff;
+}
+
+.tt-btn-msds {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.tt-btn-msds:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+.tt-btn-na {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.2);
+  border: 1px dashed rgba(255,255,255,0.1);
+  cursor: default;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.tt-enquire {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid rgba(0,188,212,0.3);
+  color: #00BCD4;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.tt-enquire:hover {
+  background: rgba(0,188,212,0.1);
+  color: #fff;
+}
+
+/* Desktop-only / Mobile-only */
+@media (min-width: 769px) {
+  .prod-sheet { display: none !important; }
+  .tooltip-overlay { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  .prod-tooltip { display: none !important; }
+}
+  </style>
 </head>
 <body>
 
@@ -198,9 +1701,734 @@
   <div class="footer-bottom"><p>&copy; 2026 Hardex India Private Limited. All rights reserved.</p></div>
 </footer>
 
-<script src="js/index-1.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// SITE CONFIGURATION
+// ═══════════════════════════════════════════════════════════════════
+// EDIT THIS FILE TO UPDATE: Company info, colors, stats, contact details
+// TOKEN COST TO REGENERATE: ~100 tokens
+
+const SITE_CONFIG = {
+  
+  // ═══ COMPANY INFORMATION ═══
+  company: {
+    name: 'Hardex India Private Limited',
+    shortName: 'Hardex India',
+    tagline: 'GREEN CHEMISTRY',
+    founded: '1980',
+    
+    description: '150+ construction chemical formulations engineered for India\'s toughest conditions. Waterproofing to industrial coatings — manufactured in-house, documented to spec.',
+    
+    // Hero Section Stats
+    stats: [
+      { number: '150+', label: 'Formulations' },
+      { number: 'Pan-India', label: 'Distribution' }
+      // Note: Removed "₹5Cr Production Capacity" as requested
+    ],
+    
+    // About Section Metrics
+    metrics: [
+      { value: 'Since 1980', label: 'Manufacturing Excellence' },
+      { value: '150+', label: 'Product Formulations' },
+      { value: 'Pan-India', label: 'Distribution Network' },
+      { value: 'ISO Certified', label: 'Rigorous QC Checks' }
+    ]
+  },
+  
+  // ═══ CONTACT INFORMATION ═══
+  contact: {
+    email: 'info@hardexindia.com',
+    phone: '+91-XXXX-XXXXXX', // Update with actual number
+    address: 'Kochi, Kerala, India', // Update with full address
+    
+    // Social Media (Add links when available)
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      instagram: '#'
+    }
+  },
+  
+  // ═══ BRAND COLORS ═══
+  // Used throughout the site - change here to update everywhere
+  colors: {
+    primary: '#00BCD4',      // Cyan/Teal (Hardex brand color)
+    primaryDark: '#0097A7',  // Darker teal
+    accent: '#00E5FF',       // Bright cyan
+    dark: '#1A1A1A',         // Almost black
+    light: '#F5F5F5',        // Off-white
+    white: '#FFFFFF',
+    success: '#4CAF50',
+    warning: '#FF9800',
+    error: '#F44336'
+  },
+  
+  // ═══ NAVIGATION MENU ═══
+  navigation: [
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Solutions', href: '#solutions' },
+    { label: 'Products', href: 'products.html' },
+    { label: 'Contact', href: '#contact', cta: true }
+  ],
+  
+  // ═══ SOLUTION CATEGORIES ═══
+  // These appear in the solutions section on homepage
+  solutions: [
+    {
+      title: 'Waterproofing Systems',
+      description: 'Complete waterproofing solutions for roofs, terraces, basements, and facades.',
+      icon: 'waterproofing', // SVG icons defined in components
+      bgImage: '' // Leave empty or add image URL: '/assets/images/waterproofing-bg.jpg'
+    },
+    {
+      title: 'Industrial Flooring',
+      description: 'Heavy-duty epoxy and polyurethane flooring systems for warehouses and manufacturing.',
+      icon: 'flooring',
+      bgImage: ''
+    },
+    {
+      title: 'Repair & Rehabilitation',
+      description: 'Structural repair compounds, grouts, and rehabilitation systems for concrete.',
+      icon: 'repair',
+      bgImage: ''
+    },
+    {
+      title: 'Protective Coatings',
+      description: 'Anti-corrosive and protective coatings for industrial and marine environments.',
+      icon: 'coating',
+      bgImage: ''
+    }
+  ],
+  
+  // ═══ FEATURE FLAGS ═══
+  // Turn features on/off
+  features: {
+    showChat: false,           // Live chat widget
+    showNewsletter: true,      // Newsletter signup
+    showTestimonials: false,   // Customer testimonials section
+    enableAnalytics: false     // Google Analytics (add tracking ID below)
+  },
+  
+  // ═══ SEO DEFAULTS ═══
+  seo: {
+    siteName: 'Hardex India',
+    defaultTitle: 'Hardex India | Construction Chemicals & Industrial Coatings',
+    defaultDescription: 'Leading manufacturer of construction chemicals and industrial coatings in India. 150+ formulations including waterproofing, epoxy flooring, and protective coatings.',
+    keywords: ['construction chemicals', 'industrial coatings', 'waterproofing', 'epoxy flooring', 'India', 'manufacturer'],
+    author: 'Hardex India Private Limited',
+    language: 'en-IN',
+    ogImage: '/assets/images/og-image.jpg' // Social media preview image
+  }
+};
+
+// Export for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { SITE_CONFIG };
+}
+// ═══════════════════════════════════════════════════════════════════
+// PRODUCTS DATABASE loaded from external file
+// ═══════════════════════════════════════════════════════════════════
+</script>
 <script src="products-data.js"></script>
-<script src="js/index-2.js"></script>
-<script src="components/shared-nav.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// SEO.JS — Auto-generates meta tags from site-config.js
+// Runs on both index.html and products.html
+// ═══════════════════════════════════════════════════════════════════
+
+(function () {
+  'use strict';
+
+  function init() {
+    const cfg = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG : null;
+    if (!cfg) return;
+
+    const seo = cfg.seo || {};
+    const company = cfg.company || {};
+
+    // Determine page-specific overrides
+    const isProductsPage = window.location.pathname.includes('products');
+    const title = isProductsPage
+      ? `Products | ${cfg.company.shortName}`
+      : seo.defaultTitle;
+    const description = isProductsPage
+      ? `Complete catalog of ${company.shortName} construction chemical products. TDS and MSDS available for every product.`
+      : seo.defaultDescription;
+    const keywords = (seo.keywords || []).join(', ');
+
+    // Set title
+    document.title = title;
+
+    // Helper
+    function setMeta(name, content, isOg) {
+      if (!content) return;
+      const attr = isOg ? 'property' : 'name';
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    }
+
+    // Basic meta
+    setMeta('description', description);
+    setMeta('keywords', keywords);
+    setMeta('author', seo.author || company.name);
+    setMeta('robots', 'index, follow');
+
+    // Open Graph
+    setMeta('og:title', title, true);
+    setMeta('og:description', description, true);
+    setMeta('og:type', 'website', true);
+    setMeta('og:site_name', seo.siteName || company.shortName, true);
+    if (seo.ogImage) setMeta('og:image', seo.ogImage, true);
+
+    // Twitter
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+
+    // Language
+    document.documentElement.lang = seo.language || 'en-IN';
+
+    // Structured Data (JSON-LD)
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: company.name,
+      url: window.location.origin,
+      description: description,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: (cfg.contact || {}).phone || '',
+        email: (cfg.contact || {}).email || '',
+        contactType: 'customer service'
+      }
+    };
+
+    let ldScript = document.getElementById('hardex-ld');
+    if (!ldScript) {
+      ldScript = document.createElement('script');
+      ldScript.id = 'hardex-ld';
+      ldScript.type = 'application/ld+json';
+      document.head.appendChild(ldScript);
+    }
+    ldScript.textContent = JSON.stringify(jsonLd);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+// ═══════════════════════════════════════════════════════════════════
+// TOOLTIP.JS — Product hover tooltips (desktop) + bottom sheet (mobile)
+// ═══════════════════════════════════════════════════════════════════
+
+(function () {
+  'use strict';
+
+  // ─── Build inner HTML shared by tooltip and sheet ───
+  function buildContent(product) {
+    const tdsBtn = product.tds
+      ? `<a href="${product.tds}" target="_blank" rel="noopener" class="tt-btn tt-btn-tds">↓ TDS</a>`
+      : `<span class="tt-btn tt-btn-na">TDS N/A</span>`;
+
+    const msdsBtn = product.msds
+      ? `<a href="${product.msds}" target="_blank" rel="noopener" class="tt-btn tt-btn-msds">↓ MSDS</a>`
+      : `<span class="tt-btn tt-btn-na">MSDS N/A</span>`;
+
+    return `
+      <span class="tt-icon">${product.icon || '🧪'}</span>
+      <div class="tt-name">${product.name}</div>
+      <div class="tt-sub">${product.category} · ${product.subcategory}</div>
+      <div class="tt-desc">${product.shortDesc}</div>
+      ${product.realTalk ? `<details class="tt-rt-wrap"><summary class="tt-rt-toggle">Real Talk</summary><div class="tt-rt-body">${product.realTalk}</div></details>` : ''}
+      <div class="tt-divider"></div>
+      <div class="tt-row">
+        <span class="tt-label">Application</span>
+        <span class="tt-val">${product.application}</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-label">Coverage</span>
+        <span class="tt-val">${product.coverage}</span>
+      </div>
+      <div class="tt-buttons">${tdsBtn}${msdsBtn}</div>
+      <a href="index.html#contact" class="tt-enquire">Request Sample →</a>
+    `;
+  }
+
+  // ─── Desktop Tooltip ───
+  let activeTooltip = null;
+  let hideTimer = null;
+
+  function createTooltip() {
+    const el = document.createElement('div');
+    el.className = 'prod-tooltip';
+    el.setAttribute('role', 'tooltip');
+    document.body.appendChild(el);
+    return el;
+  }
+
+  const tooltip = createTooltip();
+
+  function showTooltip(card, product) {
+    clearTimeout(hideTimer);
+
+    tooltip.innerHTML = buildContent(product);
+    tooltip.style.display = 'block';
+
+    // Position below card
+    const rect = card.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const scrollX = window.scrollX;
+
+    let top = rect.bottom + scrollY + 12;
+    let left = rect.left + scrollX;
+
+    // Flip up if too close to bottom
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const flip = spaceBelow < 340;
+    if (flip) {
+      top = rect.top + scrollY - 12;
+      tooltip.classList.add('flip');
+    } else {
+      tooltip.classList.remove('flip');
+    }
+
+    // Keep within viewport
+    const tipW = 300;
+    if (left + tipW > window.innerWidth - 16) {
+      left = window.innerWidth - tipW - 16;
+    }
+
+    if (flip) {
+      tooltip.style.top = '';
+      tooltip.style.bottom = (window.innerHeight - rect.top - scrollY) + 12 + 'px';
+    } else {
+      tooltip.style.bottom = '';
+      tooltip.style.top = top + 'px';
+    }
+    tooltip.style.left = Math.max(16, left) + 'px';
+
+    // Trigger transition
+    requestAnimationFrame(() => {
+      tooltip.classList.add('visible');
+    });
+
+    activeTooltip = tooltip;
+  }
+
+  function hideTooltip() {
+    hideTimer = setTimeout(() => {
+      tooltip.classList.remove('visible');
+    }, 120);
+  }
+
+  // ─── Mobile Sheet ───
+  let sheet = null;
+  let overlay = null;
+
+  function ensureSheet() {
+    if (sheet) return;
+
+    overlay = document.createElement('div');
+    overlay.className = 'tooltip-overlay';
+    overlay.addEventListener('click', closeSheet);
+    document.body.appendChild(overlay);
+
+    sheet = document.createElement('div');
+    sheet.className = 'prod-sheet';
+    document.body.appendChild(sheet);
+  }
+
+  function openSheet(product) {
+    ensureSheet();
+
+    sheet.innerHTML = `<div class="sheet-handle"></div>${buildContent(product)}`;
+
+    overlay.classList.add('active');
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+      sheet.classList.add('visible');
+    });
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSheet() {
+    if (!sheet) return;
+    overlay.classList.remove('visible');
+    sheet.classList.remove('visible');
+    document.body.style.overflow = '';
+    setTimeout(() => overlay.classList.remove('active'), 300);
+  }
+
+  // ─── Bind to product cards ───
+  function bindCard(card, product) {
+    const isMobile = () => window.innerWidth <= 768;
+
+    // Desktop: hover
+    card.addEventListener('mouseenter', () => {
+      if (!isMobile()) showTooltip(card, product);
+    });
+    card.addEventListener('mouseleave', () => {
+      if (!isMobile()) hideTooltip();
+    });
+
+    // Tooltip: stay visible when hovering tooltip itself
+    tooltip.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+    tooltip.addEventListener('mouseleave', () => hideTooltip());
+
+    // Mobile: tap
+    card.addEventListener('click', () => {
+      if (isMobile()) openSheet(product);
+    });
+
+    // Keyboard
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (isMobile()) openSheet(product);
+        else showTooltip(card, product);
+      }
+    });
+  }
+
+  // Expose for product-cards.js
+  window.HardexTooltip = { bindCard };
+
+  // Close sheet on escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hideTooltip();
+      closeSheet();
+    }
+  });
+
+})();
+// ═══════════════════════════════════════════════════════════════════
+// PRODUCT-CARDS.JS — Renders products from products-data.js
+// Populates: #featured-products (homepage) · #all-products-grid (products page)
+// ═══════════════════════════════════════════════════════════════════
+
+(function () {
+  'use strict';
+
+  function init() {
+    if (typeof PRODUCTS === 'undefined') {
+      console.warn('Hardex: PRODUCTS not loaded. Check products-data.js.');
+      return;
+    }
+
+    renderFeatured();
+    renderAllProducts();
+  }
+
+  // ─── Homepage: Featured stack ───
+  function renderFeatured() {
+    const container = document.getElementById('featured-products');
+    if (!container) return;
+
+    const featured = PRODUCTS.filter(p => p.featured);
+    if (!featured.length) {
+      container.innerHTML = '<p style="color:rgba(255,255,255,0.3);font-size:13px">No featured products yet.</p>';
+      return;
+    }
+
+    featured.forEach((product, i) => {
+      const card = document.createElement('div');
+      card.className = `feat-card rv${i === 0 ? ' primary' : ''}`;
+      card.innerHTML = `
+        <div class="feat-card-icon">${product.icon || '🧪'}</div>
+        <div class="feat-card-info">
+          <div class="feat-card-name">${product.name}</div>
+          <div class="feat-card-cat">${product.category} · ${product.subcategory}</div>
+        </div>
+      `;
+      container.appendChild(card);
+
+      if (window.HardexTooltip) {
+        window.HardexTooltip.bindCard(card, product);
+      }
+    });
+  }
+
+  // ─── Products page: Full grid by category ───
+  function renderAllProducts() {
+    const container = document.getElementById('all-products-grid');
+    if (!container) return;
+
+    // Group by category
+    const categories = {};
+    PRODUCTS.forEach(product => {
+      if (!categories[product.category]) {
+        categories[product.category] = [];
+      }
+      categories[product.category].push(product);
+    });
+
+    if (!Object.keys(categories).length) {
+      container.innerHTML = '<p style="color:var(--muted);padding:40px">No products yet. Add products to products-data.js.</p>';
+      return;
+    }
+
+    Object.entries(categories).forEach(([catName, products]) => {
+      const group = document.createElement('div');
+      group.className = 'cat-group rv';
+
+      group.innerHTML = `
+        <div class="cat-header">
+          <span class="cat-name">${catName}</span>
+          <span class="cat-count">${products.length} product${products.length !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="cat-grid" id="cat-${slug(catName)}"></div>
+      `;
+
+      container.appendChild(group);
+
+      const grid = group.querySelector('.cat-grid');
+      products.forEach(product => {
+        const card = buildProductCard(product);
+        grid.appendChild(card);
+
+        if (window.HardexTooltip) {
+          window.HardexTooltip.bindCard(card, product);
+        }
+      });
+    });
+  }
+
+  function buildProductCard(product) {
+    const card = document.createElement('div');
+    card.className = 'prod-card';
+    card.id = `product-${product.id}`;
+
+    const hasTds = !!product.tds;
+    const tdsBadge = hasTds
+      ? `<span style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.08em;color:var(--teal);background:rgba(0,188,212,0.1);padding:3px 7px;border-radius:100px">TDS ✓</span>`
+      : '';
+
+    card.innerHTML = `
+      <span class="prod-card-icon">${product.icon || '🧪'}</span>
+      <div class="prod-card-name">${product.name}</div>
+      <div class="prod-card-sub">${product.subcategory}</div>
+      <div class="prod-card-desc">${product.shortDesc}</div>
+      <div class="prod-card-foot">
+        <span class="prod-card-cov">${product.coverage}</span>
+        <span class="prod-card-arrow">→</span>
+      </div>
+      ${tdsBadge ? `<div style="margin-top:10px">${tdsBadge}</div>` : ''}
+    `;
+
+    return card;
+  }
+
+  function slug(str) {
+    return str.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  }
+
+  // Wait for DOM + data
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+// ═══════════════════════════════════════════════════════════════════
+// MAIN.JS — Hardex India
+// Handles: Navbar, Mobile menu, Scroll reveal, Trust bar, Forms
+// ═══════════════════════════════════════════════════════════════════
+
+(function () {
+  'use strict';
+
+  /* ── NAVBAR SCROLL ─────────────────────────────────────────────── */
+  const nav = document.getElementById('nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
+  /* ── MOBILE MENU TOGGLE ────────────────────────────────────────── */
+  const toggle  = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-links');
+
+  if (toggle && navList) {
+    toggle.addEventListener('click', () => {
+      const open = navList.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    navList.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  /* ── TRUST BAR — Duplicate items for seamless loop ────────────── */
+  const trust = document.querySelector('.trust');
+  if (trust) {
+    const items = Array.from(trust.children);
+    const inner = document.createElement('div');
+    inner.className = 'trust-inner';
+    items.forEach(item => inner.appendChild(item));
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      inner.appendChild(clone);
+    });
+    trust.appendChild(inner);
+  }
+
+  /* ── SCROLL REVEAL ─────────────────────────────────────────────── */
+  function initScrollReveal() {
+    const els = document.querySelectorAll('.rv');
+    if (!els.length) return;
+
+    const reveal = (el) => el.classList.add('visible');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          reveal(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+
+    els.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      // Already in viewport on load — reveal immediately, no observer needed
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        reveal(el);
+      } else {
+        observer.observe(el);
+      }
+    });
+
+    // Safety net: force-reveal anything still hidden after 1s
+    setTimeout(() => {
+      document.querySelectorAll('.rv:not(.visible)').forEach(reveal);
+    }, 1000);
+  }
+
+  /* ── CONTACT FORM ──────────────────────────────────────────────── */
+  function initForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn  = form.querySelector('.btn-submit');
+      const orig = btn.textContent;
+
+      btn.textContent = 'Sending…';
+      btn.disabled    = true;
+
+      setTimeout(() => {
+        btn.textContent     = '✓ Message Sent';
+        btn.style.background = '#4CAF50';
+        setTimeout(() => {
+          btn.textContent     = orig;
+          btn.style.background = '';
+          btn.disabled        = false;
+          form.reset();
+        }, 3000);
+      }, 1200);
+    });
+  }
+
+  function slowScrollTo(top, duration = 900) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.scrollTo(0, top);
+      return;
+    }
+
+    const start = window.scrollY;
+    const delta = top - start;
+    const startTime = performance.now();
+    const easeInOutCubic = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start + delta * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  /* ── SMOOTH SCROLL ─────────────────────────────────────────────── */
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id     = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 72;
+        slowScrollTo(top, 950);
+      });
+    });
+  }
+
+  /* ── HERO WORD STAGGER ─────────────────────────────────────────── */
+  function animateHero() {
+    const h1 = document.querySelector('.hero-h1');
+    if (!h1) return;
+
+    const words = h1.querySelectorAll('span');
+    words.forEach((w, i) => {
+      w.style.opacity    = '0';
+      w.style.transform  = 'translateY(20px)';
+      w.style.transition = `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.09}s,
+                             transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.09}s`;
+    });
+
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        words.forEach(w => {
+          w.style.opacity   = '1';
+          w.style.transform = 'translateY(0)';
+        });
+        const heroL = document.querySelector('.hero-l.rv');
+        if (heroL) heroL.classList.add('visible');
+      }, 120);
+    });
+  }
+
+  /* ── RUN ───────────────────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+    initForm();
+    initSmoothScroll();
+    animateHero();
+  });
+
+})();
+</script>
 </body>
 </html>
