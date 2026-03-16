@@ -1435,22 +1435,7 @@ a.contact-value:hover { color: var(--teal); }
 </head>
 <body>
 
-<nav class="nav" id="nav">
-  <a href="index.html" class="nav-logo">
-    <div class="logo-word"><em>hard</em>ex<span class="logo-eye"></span></div>
-    <div class="logo-sub">Green Chemistry · India</div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#home">Home</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#solutions">Solutions</a></li>
-    <li><a href="products.html" class="active">Products</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Get Quote</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<div id="shared-nav"></div>
 
 <section class="products-hero">
   <div class="products-hero-content">
@@ -1803,7 +1788,7 @@ if (typeof module !== 'undefined' && module.exports) {
   function hideTooltip() {
     hideTimer = setTimeout(() => {
       tooltip.classList.remove('visible');
-    }, 120);
+    }, 320);
   }
 
   // ─── Mobile Sheet ───
@@ -1860,6 +1845,7 @@ if (typeof module !== 'undefined' && module.exports) {
     // Tooltip: stay visible when hovering tooltip itself
     tooltip.addEventListener('mouseenter', () => clearTimeout(hideTimer));
     tooltip.addEventListener('mouseleave', () => hideTooltip());
+    tooltip.addEventListener('pointerdown', () => clearTimeout(hideTimer));
 
     // Mobile: tap
     card.addEventListener('click', () => {
@@ -2185,5 +2171,6 @@ if (typeof module !== 'undefined' && module.exports) {
 
 })();
 </script>
+<script src="components/shared-nav.js"></script>
 </body>
 </html>
