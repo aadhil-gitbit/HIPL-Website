@@ -40,13 +40,7 @@
 }
 </script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="components/tooltip.css">
-  <style id="hi">
-/* ═══════════════════════════════════════════════════════════════════
-   HARDEX INDIA — DESIGN SYSTEM
-   Industrial Editorial · Bebas Neue + DM Sans + DM Mono
-═══════════════════════════════════════════════════════════════════ */
+    <link rel="stylesheet" href="css/index.css">
 
 :root {
   --teal:        #00BCD4;
@@ -1519,22 +1513,7 @@ a.contact-value:hover { color: var(--teal); }
 </head>
 <body>
 
-<nav class="nav" id="nav">
-  <a href="#home" class="nav-logo">
-    <div class="logo-word"><em>hard</em>ex<span class="logo-eye"></span></div>
-    <div class="logo-sub">Green Chemistry · India</div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#solutions">Solutions</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<div id="shared-nav"></div>
 
 <section id="home" class="hero">
   <div class="hero-l rv">
@@ -2451,5 +2430,9 @@ if (typeof module !== 'undefined' && module.exports) {
 
 })();
 </script>
+<script src="js/index-1.js"></script>
+<script src="products-data.js"></script>
+<script src="js/index-2.js"></script>
+<script src="components/shared-nav.js"></script>
 </body>
 </html>
