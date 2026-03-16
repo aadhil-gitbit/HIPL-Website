@@ -1,0 +1,518 @@
+/* ═══════════════════════════════════════════════════════════════════
+   SHARED PAGE STYLES — Used by all new pages (about, contact, etc.)
+   Supplements the main design system in styles.css
+═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Nav Dropdown ─── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 4px; }
+.nav-dropdown-trigger svg { transition: transform 0.2s; }
+.nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(13, 13, 13, 0.97);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 0;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  z-index: 1000;
+}
+
+.nav-dropdown:hover .nav-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-panel ul { list-style: none; padding: 0; margin: 0; }
+.nav-dropdown-panel li a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.15s, background 0.15s;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+.nav-dropdown-panel li a:hover {
+  color: #fff;
+  background: rgba(0,188,212,0.1);
+}
+.nav-dropdown-all a {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 8px;
+  padding-top: 12px !important;
+  color: #00BCD4 !important;
+  font-weight: 600;
+}
+
+/* ─── Page Hero (internal pages) ─── */
+.page-hero {
+  background: #0d0d0d;
+  padding: 140px 40px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(0,188,212,0.06) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 40px);
+  pointer-events: none;
+}
+.page-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 7vw, 84px);
+  color: #fff;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+.page-hero h1 em { font-style: normal; color: #00BCD4; }
+.page-hero p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.5);
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.7;
+  position: relative;
+}
+
+/* ─── Breadcrumbs ─── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+  color: #888;
+  background: #f4f4f2;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.breadcrumb a { color: #00BCD4; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { color: #bbb; }
+
+/* ─── Page Section ─── */
+.page-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.page-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  letter-spacing: 0.02em;
+  color: #1A1A1A;
+  margin-bottom: 12px;
+}
+.page-section h2 em { font-style: normal; color: #00BCD4; }
+.page-section .section-desc {
+  font-size: 16px;
+  color: #888;
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ─── Cards Grid ─── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 32px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.card-icon { font-size: 32px; margin-bottom: 16px; }
+.card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+.card p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.7;
+}
+.card-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #00BCD4;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Timeline ─── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #00BCD4, rgba(0,188,212,0.1));
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00BCD4;
+  border: 3px solid #f4f4f2;
+}
+.timeline-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #00BCD4;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.timeline-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.timeline-item p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.7;
+}
+
+/* ─── Metrics Bar ─── */
+.metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  background: #0d0d0d;
+  padding: 60px 40px;
+}
+.metric-item { text-align: center; }
+.metric-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #00BCD4;
+  line-height: 1;
+}
+.metric-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── Downloads Table ─── */
+.downloads-filter {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: #00BCD4;
+  color: #0d0d0d;
+  border-color: #00BCD4;
+  font-weight: 700;
+}
+.downloads-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.downloads-table th {
+  text-align: left;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 12px 16px;
+  border-bottom: 2px solid #0d0d0d;
+}
+.downloads-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 14px;
+}
+.downloads-table tr:hover { background: rgba(0,188,212,0.04); }
+.dl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #00BCD4;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* ─── Dealer Locator ─── */
+.dealer-search {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.dealer-search select,
+.dealer-search input {
+  padding: 12px 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  background: #fff;
+  flex: 1;
+}
+.dealer-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+.dealer-card:hover { border-color: #00BCD4; }
+.dealer-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.dealer-meta {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.8;
+}
+.dealer-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(0,188,212,0.1);
+  color: #0097A7;
+}
+
+/* ─── Contact Page ─── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+.contact-info-item {
+  margin-bottom: 32px;
+}
+.contact-info-item h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00BCD4;
+  margin-bottom: 8px;
+}
+.contact-info-item p {
+  font-size: 15px;
+  color: #3a3a3a;
+  line-height: 1.8;
+}
+.contact-form-page input,
+.contact-form-page select,
+.contact-form-page textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+.contact-form-page input:focus,
+.contact-form-page select:focus,
+.contact-form-page textarea:focus {
+  outline: none;
+  border-color: #00BCD4;
+}
+.contact-form-page textarea { min-height: 140px; resize: vertical; }
+
+/* ─── Product Detail ─── */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.product-detail-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(0,188,212,0.1);
+  color: #0097A7;
+  margin-bottom: 16px;
+}
+.product-detail-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.product-detail-desc {
+  font-size: 16px;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+.spec-table th {
+  text-align: left;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 8px 0;
+  border-bottom: 2px solid #0d0d0d;
+}
+.spec-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 14px;
+}
+.spec-table td:first-child {
+  font-weight: 600;
+  color: #3a3a3a;
+  width: 40%;
+}
+.product-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ─── Solution Detail ─── */
+.solution-challenges {
+  list-style: none;
+  padding: 0;
+}
+.solution-challenges li {
+  position: relative;
+  padding: 8px 0 8px 24px;
+  font-size: 14px;
+  color: #3a3a3a;
+}
+.solution-challenges li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00BCD4;
+}
+
+/* ─── CTA Banner ─── */
+.cta-banner {
+  background: #0d0d0d;
+  padding: 80px 40px;
+  text-align: center;
+}
+.cta-banner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.cta-banner p {
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+.cta-banner .btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #00BCD4;
+  color: #0d0d0d;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 14px 32px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.2s;
+}
+.cta-banner .btn-dark:hover {
+  background: #0097A7;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .page-hero { padding: 120px 24px 60px; }
+  .page-section { padding: 60px 24px; }
+  .breadcrumb { padding: 12px 24px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .product-detail-grid { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+  .metrics-bar { padding: 40px 24px; }
+  .dealer-search { flex-direction: column; }
+  .dealer-card { flex-direction: column; }
+  .nav-dropdown-panel { display: none; } /* mobile uses accordion */
+}
