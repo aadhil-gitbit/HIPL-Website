@@ -67,6 +67,33 @@ const SITE_CONFIG = {
     { label: 'Products', href: 'products.html' },
     { label: 'Contact', href: '#contact', cta: true }
   ],
+
+  // ═══ SHARED NAVIGATION CONFIG ═══
+  // Used by components/shared-nav.js for desktop dropdowns, mobile accordions, and search
+  navigationConfig: {
+    homeLink: 'index.html',
+    primaryLinks: [
+      { label: 'About', href: 'about.html' },
+      { label: 'Downloads', href: 'downloads.html' },
+      { label: 'Dealers', href: 'dealers.html' }
+    ],
+    productsCategories: [
+      { label: 'All Products', href: 'products.html' },
+      { label: 'Waterproofing', href: 'products.html?category=Waterproofing' },
+      { label: 'Flooring Systems', href: 'products.html?category=Flooring%20Systems' },
+      { label: 'Primers', href: 'products.html?category=Primers' },
+      { label: 'Sealers', href: 'products.html?category=Sealers' }
+    ],
+    solutionsLinks: [
+      { label: 'All Solutions', href: 'solutions.html' },
+      { label: 'Roofing & Terraces', href: 'solutions.html#roofing' },
+      { label: 'Industrial Floors', href: 'solutions.html#industrial-floors' },
+      { label: 'Basement Waterproofing', href: 'solutions.html#basements' },
+      { label: 'Facade Protection', href: 'solutions.html#facades' },
+      { label: 'Concrete Repair', href: 'solutions.html#concrete-repair' }
+    ],
+    cta: { label: 'Contact', href: 'contact.html' }
+  },
   
   // ═══ SOLUTION CATEGORIES ═══
   // These appear in the solutions section on homepage
