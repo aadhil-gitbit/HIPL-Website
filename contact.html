@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Hardex India</title>
+  <meta name="description" content="Get in touch with Hardex India for technical consultation, product samples, dealer inquiries, or bulk pricing.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="shared-nav"></div>
+
+<div class="page-hero">
+  <h1>Get in <em>Touch</em></h1>
+  <p>Technical consultation, product samples, dealer inquiries, or bulk pricing -- we're here to help.</p>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> <span>/</span> Contact
+</div>
+
+<div class="page-section">
+  <div class="contact-grid">
+    <!-- Left: Info -->
+    <div>
+      <div class="contact-info-item">
+        <h3>Email</h3>
+        <p><a href="mailto:info@hardexindia.com" style="color:#00BCD4">info@hardexindia.com</a></p>
+      </div>
+      <div class="contact-info-item">
+        <h3>Phone</h3>
+        <p>+91-XXXX-XXXXXX</p>
+      </div>
+      <div class="contact-info-item">
+        <h3>Head Office</h3>
+        <p>Hardex India Private Limited<br>Kochi, Kerala, India</p>
+      </div>
+      <div class="contact-info-item">
+        <h3>Working Hours</h3>
+        <p>Monday - Saturday: 9:00 AM - 6:00 PM IST<br>Sunday: Closed</p>
+      </div>
+      <div class="contact-info-item">
+        <h3>Find a Dealer</h3>
+        <p>Looking for a dealer or distributor near you?<br><a href="dealers.html" style="color:#00BCD4; font-weight:600">View Dealer Network &rarr;</a></p>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div>
+      <form class="contact-form-page" id="contactForm">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <input type="text" placeholder="Your Name *" required>
+          <input type="text" placeholder="Company Name">
+        </div>
+        <input type="email" placeholder="Email Address *" required>
+        <input type="tel" placeholder="Phone Number">
+        <select>
+          <option value="" disabled selected>Inquiry Type</option>
+          <option value="technical">Technical Consultation</option>
+          <option value="samples">Product Samples</option>
+          <option value="pricing">Bulk Pricing</option>
+          <option value="dealer">Dealer/Distributor Inquiry</option>
+          <option value="general">General Inquiry</option>
+        </select>
+        <select>
+          <option value="" disabled selected>Product Category (Optional)</option>
+          <option value="waterproofing">Waterproofing</option>
+          <option value="flooring">Flooring Systems</option>
+          <option value="primers">Primers</option>
+          <option value="sealers">Sealers</option>
+          <option value="adhesives">Adhesives</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea placeholder="Tell us about your project or inquiry *" required></textarea>
+        <button type="submit" class="btn-dark btn-submit" style="border:none; width:100%; justify-content:center;">Send Message &rarr;</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Prefer a Quick Call?</h2>
+  <p>Our technical team is available Monday through Saturday for consultations.</p>
+  <a href="tel:+91XXXXXXXXXX" class="btn-dark">Call Us Now &rarr;</a>
+</div>
+
+<div id="shared-footer"></div>
+
+<script src="components/shared-nav.js"></script>
+<script>
+  // Contact form handler
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      const orig = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = '✓ Message Sent';
+        btn.style.background = '#4CAF50';
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.background = '';
+          btn.disabled = false;
+          form.reset();
+        }, 3000);
+      }, 1200);
+    });
+  }
+</script>
+</body>
+</html>

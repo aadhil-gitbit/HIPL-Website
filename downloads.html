@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads | Hardex India</title>
+  <meta name="description" content="Download technical data sheets (TDS), material safety data sheets (MSDS), and product documentation for all Hardex India products.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="shared-nav"></div>
+
+<div class="page-hero">
+  <h1>Download <em>Center</em></h1>
+  <p>Technical data sheets, safety data sheets, and product documentation -- all in one place.</p>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> <span>/</span> Downloads
+</div>
+
+<div class="page-section">
+  <!-- Filters -->
+  <div class="downloads-filter" id="download-filters">
+    <button class="filter-btn active" data-filter="all">All Documents</button>
+    <button class="filter-btn" data-filter="tds">TDS</button>
+    <button class="filter-btn" data-filter="msds">MSDS</button>
+  </div>
+
+  <!-- Category filter row -->
+  <div class="downloads-filter" id="category-filters" style="margin-top:-16px;"></div>
+
+  <!-- Search -->
+  <div style="margin-bottom:32px;">
+    <input type="text" id="doc-search" placeholder="Search by product name..." style="width:100%; max-width:400px; padding:12px 16px; border:1px solid rgba(0,0,0,0.1); border-radius:6px; font-size:14px; font-family:'DM Sans',sans-serif;">
+  </div>
+
+  <!-- Table -->
+  <table class="downloads-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Document Type</th>
+        <th>Download</th>
+      </tr>
+    </thead>
+    <tbody id="downloads-tbody"></tbody>
+  </table>
+
+  <p id="no-results" style="display:none; padding:40px 0; color:#888; text-align:center;">No documents match your filters.</p>
+</div>
+
+<div class="cta-banner">
+  <h2>Need a Custom Specification?</h2>
+  <p>Our technical team can provide tailored documentation for your project requirements.</p>
+  <a href="contact.html" class="btn-dark">Request Documentation &rarr;</a>
+</div>
+
+<div id="shared-footer"></div>
+
+<script src="config/products-data.js"></script>
+<script src="components/shared-nav.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  if (typeof PRODUCTS === 'undefined') return;
+
+  const tbody = document.getElementById('downloads-tbody');
+  const noResults = document.getElementById('no-results');
+  const searchInput = document.getElementById('doc-search');
+  const catFilters = document.getElementById('category-filters');
+  let activeDocType = 'all';
+  let activeCat = 'all';
+  let searchTerm = '';
+
+  // Build category filter buttons
+  const categories = [...new Set(PRODUCTS.map(p => p.category))];
+  catFilters.innerHTML = '<button class="filter-btn active" data-cat="all">All Categories</button>' +
+    categories.map(c => `<button class="filter-btn" data-cat="${c}">${c}</button>`).join('');
+
+  // Build document rows
+  function buildRows() {
+    const rows = [];
+    PRODUCTS.forEach(p => {
+      if (p.tds) {
+        rows.push({ product: p.name, category: p.category, type: 'TDS', url: p.tds, id: p.id });
+      }
+      if (p.msds) {
+        rows.push({ product: p.name, category: p.category, type: 'MSDS', url: p.msds, id: p.id });
+      }
+    });
+    return rows;
+  }
+
+  function render() {
+    const rows = buildRows().filter(r => {
+      if (activeDocType !== 'all' && r.type.toLowerCase() !== activeDocType) return false;
+      if (activeCat !== 'all' && r.category !== activeCat) return false;
+      if (searchTerm && !r.product.toLowerCase().includes(searchTerm.toLowerCase())) return false;
+      return true;
+    });
+
+    if (!rows.length) {
+      tbody.innerHTML = '';
+      noResults.style.display = 'block';
+      return;
+    }
+
+    noResults.style.display = 'none';
+    tbody.innerHTML = rows.map(r => `
+      <tr>
+        <td><a href="product-detail.html?id=${r.id}" style="color:#1A1A1A; font-weight:600;">${r.product}</a></td>
+        <td>${r.category}</td>
+        <td><span style="display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; letter-spacing:0.06em; background:${r.type === 'TDS' ? 'rgba(0,188,212,0.1)' : 'rgba(255,152,0,0.1)'}; color:${r.type === 'TDS' ? '#0097A7' : '#E65100'}">${r.type}</span></td>
+        <td><a href="${r.url}" class="dl-link" target="_blank">&#x2913; Download</a></td>
+      </tr>
+    `).join('');
+  }
+
+  // Doc type filters
+  document.getElementById('download-filters').addEventListener('click', (e) => {
+    if (!e.target.classList.contains('filter-btn')) return;
+    document.querySelectorAll('#download-filters .filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    activeDocType = e.target.dataset.filter;
+    render();
+  });
+
+  // Category filters
+  catFilters.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('filter-btn')) return;
+    catFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    activeCat = e.target.dataset.cat;
+    render();
+  });
+
+  // Search
+  searchInput.addEventListener('input', (e) => {
+    searchTerm = e.target.value;
+    render();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

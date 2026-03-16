@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Dealer | Hardex India</title>
+  <meta name="description" content="Find Hardex India dealers and distributors near you. Pan-India network of authorized dealers for construction chemicals and industrial coatings.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="shared-nav"></div>
+
+<div class="page-hero">
+  <h1>Find a <em>Dealer</em></h1>
+  <p>Authorized dealers and distributors across India. Find one near you.</p>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> <span>/</span> Dealer Locator
+</div>
+
+<div class="page-section">
+  <!-- Search / Filter -->
+  <div class="dealer-search">
+    <select id="region-filter">
+      <option value="all">All Regions</option>
+    </select>
+    <select id="type-filter">
+      <option value="all">All Types</option>
+      <option value="headquarters">Headquarters</option>
+      <option value="distributor">Distributor</option>
+      <option value="dealer">Dealer</option>
+      <option value="applicator">Applicator</option>
+    </select>
+    <input type="text" id="dealer-search" placeholder="Search by name or city...">
+  </div>
+
+  <p id="dealer-count" style="font-size:13px; color:#888; margin-bottom:24px;"></p>
+
+  <div id="dealer-list"></div>
+
+  <p id="no-dealers" style="display:none; padding:40px 0; color:#888; text-align:center;">No dealers found matching your criteria.</p>
+</div>
+
+<!-- Become a Dealer -->
+<div class="page-section" style="background:#f9f9f7; max-width:100%; margin:0; padding:80px 40px;">
+  <div style="max-width:800px; margin:0 auto; text-align:center;">
+    <h2>Become a <em>Dealer</em></h2>
+    <p class="section-desc" style="margin:12px auto 32px; max-width:500px;">Interested in distributing Hardex products in your region? Join our growing pan-India network.</p>
+    <a href="contact.html" class="btn-dark" style="display:inline-flex; border:none; align-items:center; gap:8px; background:#00BCD4; color:#0d0d0d; font-weight:700; font-size:14px; padding:14px 32px; border-radius:6px;">Apply Now &rarr;</a>
+  </div>
+</div>
+
+<div id="shared-footer"></div>
+
+<script src="config/dealers-data.js"></script>
+<script src="components/shared-nav.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  if (typeof DEALERS === 'undefined') return;
+
+  const regionSelect = document.getElementById('region-filter');
+  const typeSelect = document.getElementById('type-filter');
+  const searchInput = document.getElementById('dealer-search');
+  const dealerList = document.getElementById('dealer-list');
+  const dealerCount = document.getElementById('dealer-count');
+  const noDealers = document.getElementById('no-dealers');
+
+  // Populate regions
+  if (typeof REGIONS !== 'undefined') {
+    REGIONS.forEach(r => {
+      const opt = document.createElement('option');
+      opt.value = r;
+      opt.textContent = r;
+      regionSelect.appendChild(opt);
+    });
+  }
+
+  function render() {
+    const region = regionSelect.value;
+    const type = typeSelect.value;
+    const search = searchInput.value.toLowerCase();
+
+    const filtered = DEALERS.filter(d => {
+      if (region !== 'all' && d.region !== region) return false;
+      if (type !== 'all' && d.type !== type) return false;
+      if (search && !d.name.toLowerCase().includes(search) && !d.city.toLowerCase().includes(search)) return false;
+      return true;
+    });
+
+    dealerCount.textContent = `${filtered.length} dealer${filtered.length !== 1 ? 's' : ''} found`;
+
+    if (!filtered.length) {
+      dealerList.innerHTML = '';
+      noDealers.style.display = 'block';
+      return;
+    }
+
+    noDealers.style.display = 'none';
+    dealerList.innerHTML = filtered.map(d => `
+      <div class="dealer-card">
+        <div>
+          <div class="dealer-name">${d.name}</div>
+          <div class="dealer-meta">
+            ${d.address}<br>
+            ${d.phone ? '&#x260E; ' + d.phone + '<br>' : ''}
+            ${d.email ? '&#x2709; <a href="mailto:' + d.email + '" style="color:#00BCD4">' + d.email + '</a>' : ''}
+          </div>
+        </div>
+        <div>
+          <span class="dealer-badge">${d.type}</span>
+          <div style="font-size:12px; color:#888; margin-top:8px;">${d.region}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  regionSelect.addEventListener('change', render);
+  typeSelect.addEventListener('change', render);
+  searchInput.addEventListener('input', render);
+
+  render();
+})();
+</script>
+</body>
+</html>

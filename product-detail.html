@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Hardex India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="shared-nav"></div>
+
+<div class="breadcrumb" id="product-breadcrumb">
+  <a href="index.html">Home</a> <span>/</span> <a href="products.html">Products</a> <span>/</span> <span id="bc-cat"></span> <span>/</span> <span id="bc-name">Loading...</span>
+</div>
+
+<div class="page-section" id="product-content">
+  <!-- Populated by JS -->
+  <div style="text-align:center; padding:80px 0; color:#888;">Loading product...</div>
+</div>
+
+<!-- Related Products -->
+<div class="page-section" id="related-section" style="background:#f9f9f7; max-width:100%; margin:0; padding:80px 40px; display:none;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <h2 style="font-family:'Bebas Neue',sans-serif; font-size:36px; letter-spacing:0.02em; margin-bottom:24px;">Related <em style="font-style:normal; color:#00BCD4;">Products</em></h2>
+    <div class="card-grid" id="related-products"></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Need Technical Support?</h2>
+  <p>Get expert advice on product selection, specification, and application.</p>
+  <a href="contact.html" class="btn-dark">Contact Technical Team &rarr;</a>
+</div>
+
+<div id="shared-footer"></div>
+
+<script src="config/products-data.js"></script>
+<script src="components/shared-nav.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  if (typeof PRODUCTS === 'undefined') return;
+
+  // Get product ID from URL
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get('id');
+
+  if (!productId) {
+    document.getElementById('product-content').innerHTML = '<div style="text-align:center; padding:80px 0;"><h2 style="font-family:Bebas Neue,sans-serif; font-size:48px;">Product Not Found</h2><p style="color:#888; margin-top:12px;">Please select a product from our <a href="products.html" style="color:#00BCD4">catalog</a>.</p></div>';
+    return;
+  }
+
+  const product = PRODUCTS.find(p => p.id === productId);
+  if (!product) {
+    document.getElementById('product-content').innerHTML = '<div style="text-align:center; padding:80px 0;"><h2 style="font-family:Bebas Neue,sans-serif; font-size:48px;">Product Not Found</h2><p style="color:#888; margin-top:12px;">Please select a product from our <a href="products.html" style="color:#00BCD4">catalog</a>.</p></div>';
+    return;
+  }
+
+  // Update page title and meta
+  document.title = product.seo ? product.seo.title : product.name + ' | Hardex India';
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) {
+    const meta = document.createElement('meta');
+    meta.name = 'description';
+    meta.content = product.seo ? product.seo.description : product.shortDesc;
+    document.head.appendChild(meta);
+  }
+
+  // Breadcrumb
+  document.getElementById('bc-cat').innerHTML = `<a href="products.html?cat=${encodeURIComponent(product.category.toLowerCase().replace(/\s+/g, '-'))}">${product.category}</a>`;
+  document.getElementById('bc-name').textContent = product.name;
+
+  // Build downloads
+  let downloadsHTML = '';
+  if (product.tds || product.msds) {
+    downloadsHTML = '<div class="product-actions">';
+    if (product.tds) downloadsHTML += `<a href="${product.tds}" class="btn-dark" style="border:none; display:inline-flex; align-items:center; gap:8px; background:#00BCD4; color:#0d0d0d; font-weight:700; font-size:14px; padding:14px 28px; border-radius:6px;" target="_blank">&#x2913; Download TDS</a>`;
+    if (product.msds) downloadsHTML += `<a href="${product.msds}" class="btn-dark" style="border:none; display:inline-flex; align-items:center; gap:8px; background:transparent; color:#888; font-weight:600; font-size:14px; padding:13px 26px; border-radius:6px; border:1px solid rgba(0,0,0,0.1);" target="_blank">&#x2913; Download MSDS</a>`;
+    downloadsHTML += `<a href="contact.html" style="display:inline-flex; align-items:center; gap:8px; color:#00BCD4; font-weight:600; font-size:14px; padding:13px 26px;">Request Sample &rarr;</a>`;
+    downloadsHTML += '</div>';
+  }
+
+  // Render product detail
+  document.getElementById('product-content').innerHTML = `
+    <div class="product-detail-grid">
+      <div>
+        <span class="product-detail-badge">${product.category} &middot; ${product.subcategory}</span>
+        <h1 class="product-detail-name">${product.name}</h1>
+        <p class="product-detail-desc">${product.shortDesc}</p>
+
+        <table class="spec-table">
+          <thead><tr><th>Specification</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Category</td><td>${product.category}</td></tr>
+            <tr><td>Subcategory</td><td>${product.subcategory}</td></tr>
+            <tr><td>Application</td><td>${product.application}</td></tr>
+            <tr><td>Coverage</td><td>${product.coverage}</td></tr>
+          </tbody>
+        </table>
+
+        ${downloadsHTML}
+      </div>
+
+      <div>
+        <!-- Product image placeholder -->
+        <div style="background:#0d0d0d; border-radius:12px; aspect-ratio:1; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;">
+          <span style="font-size:80px;">${product.icon || '🧪'}</span>
+          <span style="font-family:'DM Mono',monospace; font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:0.08em; text-transform:uppercase;">Product Image</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Related products (same category, different product)
+  const related = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
+  if (related.length) {
+    document.getElementById('related-section').style.display = 'block';
+    document.getElementById('related-products').innerHTML = related.map(p => `
+      <a href="product-detail.html?id=${p.id}" class="card" style="text-decoration:none;">
+        <div class="card-icon">${p.icon || '🧪'}</div>
+        <h3>${p.name}</h3>
+        <p>${p.shortDesc}</p>
+        <span class="card-link">View Product &rarr;</span>
+      </a>
+    `).join('');
+  }
+
+  // JSON-LD structured data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.shortDesc,
+    "brand": { "@type": "Brand", "name": "Hardex India" },
+    "manufacturer": { "@type": "Organization", "name": "Hardex India Private Limited" },
+    "category": product.category
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(jsonLd);
+  document.head.appendChild(script);
+})();
+</script>
+</body>
+</html>

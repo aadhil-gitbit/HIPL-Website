@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions | Hardex India</title>
+  <meta name="description" content="Construction chemical solutions by application: roofing, industrial floors, basement waterproofing, facade protection, and concrete repair.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="shared-nav"></div>
+
+<div class="page-hero">
+  <h1>Solutions by <em>Application</em></h1>
+  <p>The right chemistry for every construction challenge. Browse by what you're building, not just what you're buying.</p>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> <span>/</span> Solutions
+</div>
+
+<div class="page-section">
+  <div id="solutions-grid" class="card-grid"></div>
+</div>
+
+<!-- Individual solution sections rendered by JS -->
+<div id="solution-details"></div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Not Sure Which Solution Fits?</h2>
+  <p>Our technical team can help you specify the right products for your project.</p>
+  <a href="contact.html" class="btn-dark">Get Technical Support &rarr;</a>
+</div>
+
+<div id="shared-footer"></div>
+
+<script src="config/solutions-data.js"></script>
+<script src="config/products-data.js"></script>
+<script src="components/shared-nav.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  if (typeof SOLUTIONS === 'undefined') return;
+
+  // Render solution cards grid
+  const grid = document.getElementById('solutions-grid');
+  if (grid) {
+    SOLUTIONS.forEach(sol => {
+      const card = document.createElement('a');
+      card.href = '#' + sol.id;
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-icon">${sol.icon}</div>
+        <h3>${sol.title}</h3>
+        <p>${sol.tagline}</p>
+        <span class="card-link">Learn more &rarr;</span>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // Render solution detail sections
+  const details = document.getElementById('solution-details');
+  if (details) {
+    SOLUTIONS.forEach((sol, i) => {
+      const bg = i % 2 === 0 ? '' : 'style="background:#f9f9f7"';
+      const challengesList = sol.challenges.map(c => `<li>${c}</li>`).join('');
+
+      // Find recommended products
+      let productsHTML = '';
+      if (typeof PRODUCTS !== 'undefined' && sol.recommendedProducts.length) {
+        const recs = PRODUCTS.filter(p => sol.recommendedProducts.includes(p.id));
+        if (recs.length) {
+          productsHTML = `
+            <h3 style="margin-top:40px; font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.02em;">Recommended Products</h3>
+            <div class="card-grid" style="margin-top:16px;">
+              ${recs.map(p => `
+                <div class="card">
+                  <div class="card-icon">${p.icon || '🧪'}</div>
+                  <h3>${p.name}</h3>
+                  <p>${p.shortDesc}</p>
+                  <a href="product-detail.html?id=${p.id}" class="card-link">View Product &rarr;</a>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+      }
+
+      details.innerHTML += `
+        <div class="page-section" id="${sol.id}" ${bg}>
+          <div style="max-width:1200px; margin:0 auto;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
+              <div>
+                <h2>${sol.icon} ${sol.title}</h2>
+                <p style="font-size:16px; color:#888; line-height:1.8; margin-top:16px;">${sol.description}</p>
+                ${productsHTML}
+              </div>
+              <div>
+                <h3 style="font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#00BCD4; margin-bottom:16px;">Common Challenges</h3>
+                <ul class="solution-challenges">${challengesList}</ul>
+                <a href="contact.html" class="btn-dark" style="display:inline-flex; margin-top:32px; border:none; align-items:center; gap:8px; background:#00BCD4; color:#0d0d0d; font-weight:700; font-size:14px; padding:14px 28px; border-radius:6px;">Get Expert Advice &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
+})();
+</script>
+</body>
+</html>
