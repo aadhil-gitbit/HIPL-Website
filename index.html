@@ -1385,6 +1385,46 @@ a.contact-value:hover { color: var(--teal); }
   margin-bottom: 0;
 }
 
+.tt-rt-wrap {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.tt-rt-toggle {
+  font-size: 12px;
+  color: #00BCD4;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.tt-rt-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.tt-rt-toggle::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 0.2s ease;
+}
+
+.tt-rt-wrap[open] .tt-rt-toggle::before {
+  transform: rotate(90deg);
+}
+
+.tt-rt-body {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.84);
+}
+
+
 .tt-buttons {
   display: flex;
   gap: 8px;
