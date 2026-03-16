@@ -12,24 +12,33 @@
 
 ```
 hardex-website/
-├── index.html              # Homepage
-├── products.html           # Full product catalog
+├── index.html
+├── products.html
+├── product-detail.html
+├── solutions.html
+├── about.html
+├── contact.html
+├── downloads.html
+├── dealers.html
+├── 404.html
+├── robots.txt
+├── sitemap.xml
+├── site.webmanifest
+├── favicon.svg
+├── og-image.svg
 ├── config/
 │   ├── products-data.js    # ⭐ EDIT THIS TO ADD/MODIFY PRODUCTS
+│   ├── solutions-data.js   # Solution taxonomy + recommended products
+│   ├── dealers-data.js     # Dealer listings
 │   └── site-config.js      # ⭐ EDIT THIS FOR COMPANY INFO & COLORS
-├── components/
-│   ├── tooltip.css         # Product tooltip styles
-│   ├── tooltip.js          # Tooltip behavior
-│   ├── product-cards.js    # Product rendering engine
-│   └── seo.js              # Auto-generates SEO meta tags
-├── css/
-│   └── styles.css          # Main stylesheet
-├── js/
-│   └── main.js             # Navigation, forms, animations
-└── assets/
-    ├── tds/                # Place TDS PDFs here
-    ├── msds/               # Place MSDS PDFs here
-    └── images/             # Place images here
+├── docs/
+│   └── INDEX.md            # Repo map + maintenance notes
+├── scripts/
+│   ├── validate-data-links.js
+│   └── validate-meta.py
+└── archive/
+    ├── Product data for two tier tooltip.txt
+    └── files final.zip
 ```
 
 ---
